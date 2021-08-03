@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>HEXO+github搭建个人博客 | zlwnge</title>
+  <title>zlwnge</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
     <link rel="shortcut icon" href="/favicon.png">
@@ -56,16 +56,6 @@
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      HEXO+github搭建个人博客
-    </h1>
-  
-
-      </header>
-    
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h3 id="01-HEXO框架的本地安装与运行"><a href="#01-HEXO框架的本地安装与运行" class="headerlink" title="01. HEXO框架的本地安装与运行"></a>01. HEXO框架的本地安装与运行</h3><ul>
@@ -82,7 +72,7 @@
 <li><code>npm install -g hexo-cli</code></li>
 </ul>
 <blockquote>
-<p>出现该警告<img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210802141411601.png" alt="image-20210802141411601"></p>
+<p>出现该警告<img src="http://image.zlwnge.top/20210803182934.png" alt="image-20210802141411601"></p>
 </blockquote>
 <blockquote>
 <p>原因： fsevent是mac osx系统的，在win或者Linux下使用了 所以会有警告，忽略就好了。</p>
@@ -94,7 +84,7 @@
 <li><code>hexo server</code></li>
 </ul>
 <blockquote>
-<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210802141835027.png" alt="image-20210802141835027"></p>
+<p><img src="http://image.zlwnge.top/20210803182935.png" alt="image-20210802141835027"></p>
 </blockquote>
 <blockquote>
 <p>表示成功安装，可访问<code>http://localhost:4000</code></p>
@@ -109,22 +99,21 @@
 <p>这里使用的是<code>git clone https://github.com/autoload/hexo-theme-auto.git themes/auto</code>进行安装，安装完毕后，打开<code>_config.yml</code>文件。将<code>_config.yml</code>中的<code>theme</code>字段值改为<code>auto</code>。</p>
 <h3 id="04-自定义博客结构"><a href="#04-自定义博客结构" class="headerlink" title="04. 自定义博客结构"></a>04. 自定义博客结构</h3><p>根据自身需要使用网页开发的基本技术将<code>theme</code>下的模板文件进行修改。</p>
 <h3 id="05-写博客以及文章分类与标签"><a href="#05-写博客以及文章分类与标签" class="headerlink" title="05. 写博客以及文章分类与标签"></a>05. 写博客以及文章分类与标签</h3><p>参见<a target="_blank" rel="noopener" href="https://hexo.io/docs/front-matter">hexo docs文件</a></p>
-<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210802204144823.png" alt="image-20210802204144823"></p>
+<p><img src="http://image.zlwnge.top/20210803182936.png" alt="image-20210802204144823"></p>
 <h3 id="06-让代码显示得更加美观"><a href="#06-让代码显示得更加美观" class="headerlink" title="06. 让代码显示得更加美观"></a>06. 让代码显示得更加美观</h3><p>引入<code>&lt;linkrel=&quot;stylesheet&quot; href=&quot;https://oindk07nf.qnssl.com/atom-one-dark.css&quot; media=&quot;screen&quot; type=&quot;text/css&quot;&gt;</code>后，按照<a target="_blank" rel="noopener" href="https://hexo.io/docs/tag-plugins#Code-Block">hexo中tag-plugins的code-block</a>书写代码即可。</p>
 <h3 id="07-本地写作时图床的最佳解决方案"><a href="#07-本地写作时图床的最佳解决方案" class="headerlink" title="07. 本地写作时图床的最佳解决方案"></a>07. 本地写作时图床的最佳解决方案</h3><h3 id="08-必备插件"><a href="#08-必备插件" class="headerlink" title="08. 必备插件"></a>08. 必备插件</h3><h3 id="09-将博客部署到github"><a href="#09-将博客部署到github" class="headerlink" title="09.将博客部署到github"></a>09.将博客部署到github</h3><p>如图，新建一个repository，</p>
-<p><img src="HEXO.assets/https://zlwnge.github.io/blogimage/image-20210803132752587.png.png" alt="image-20210803132752587"></p>
+<p><img src="http://image.zlwnge.top/20210803183125.png" alt="image-20210803183125694"></p>
 <p>将<code>_config.yml</code>中的<code>url</code>值设置为<code>https://zlwnge.github.io/</code>，将<code>path</code>值设置为<code>index.html</code>，<code>deploy</code>下，<code>type</code>值为<code>git</code>，<code>repository</code>值为<code>https://github.com/zlwnge/zlwnge.github.io.git/</code>，<code>branch</code>值为<code>master</code>。</p>
 <blockquote>
 <p>若没有这些键，可以自行添加。但注意冒号后一定要跟一个空格。</p>
 </blockquote>
 <p>部署：<code>$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></p>
 <p>访问：在浏览器中输入<code>https://zlwnge.github.io/</code>就可以访问了。</p>
-<p><img src="HEXO.assets/https://zlwnge.github.io/blogimage/image-20210803132752587.png.png" alt="image-20210803145705746"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zlwnge.github.io/2021/08/02/HEXO/" data-id="ckrvpwakc0000vsjlanmdfkjs" data-title="HEXO+github搭建个人博客" class="article-share-link">Teilen</a>
+      <a data-url="https://zlwnge.github.io/2021/08/02/HEXO/" data-id="ckrvxat470000bsjle0zx5ew1" data-title="" class="article-share-link">Teilen</a>
       
       
       
@@ -159,7 +148,7 @@
       <ul>
         
           <li>
-            <a href="/2021/08/02/HEXO/">HEXO+github搭建个人博客</a>
+            <a href="/2021/08/02/HEXO/">(no title)</a>
           </li>
         
           <li>
