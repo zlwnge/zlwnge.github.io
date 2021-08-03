@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>zlwnge</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://bestcoderw.github.io/blog.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://bestcoderw.github.io/blog.github.io/"/>
   <updated>2021-08-02T12:54:56.736Z</updated>
-  <id>http://example.com/</id>
+  <id>https://bestcoderw.github.io/blog.github.io/</id>
   
   <author>
     <name>John Doe</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title></title>
-    <link href="http://example.com/2021/08/02/HEXO/"/>
-    <id>http://example.com/2021/08/02/HEXO/</id>
+    <link href="https://bestcoderw.github.io/blog.github.io/2021/08/02/HEXO/"/>
+    <id>https://bestcoderw.github.io/blog.github.io/2021/08/02/HEXO/</id>
     <published>2021-08-02T13:35:27.075Z</published>
     <updated>2021-08-02T12:54:56.736Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2021/08/02/hello-world/"/>
-    <id>http://example.com/2021/08/02/hello-world/</id>
+    <link href="https://bestcoderw.github.io/blog.github.io/2021/08/02/hello-world/"/>
+    <id>https://bestcoderw.github.io/blog.github.io/2021/08/02/hello-world/</id>
     <published>2021-08-02T05:58:02.700Z</published>
     <updated>1985-10-26T08:15:00.000Z</updated>
     
