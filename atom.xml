@@ -6,7 +6,7 @@
   <link href="https://zlwnge.github.io/atom.xml" rel="self"/>
   
   <link href="https://zlwnge.github.io/"/>
-  <updated>2021-08-03T02:48:24.135Z</updated>
+  <updated>2021-08-03T02:50:03.267Z</updated>
   <id>https://zlwnge.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://zlwnge.github.io/2021/08/02/HEXO/"/>
     <id>https://zlwnge.github.io/2021/08/02/HEXO/</id>
     <published>2021-08-02T13:35:27.075Z</published>
-    <updated>2021-08-03T02:48:24.135Z</updated>
+    <updated>2021-08-03T02:50:03.267Z</updated>
     
     <content type="html"><![CDATA[<h3 id="01-HEXO框架的本地安装与运行"><a href="#01-HEXO框架的本地安装与运行" class="headerlink" title="01. HEXO框架的本地安装与运行"></a>01. HEXO框架的本地安装与运行</h3><ul><li>安装<a href="https://git-scm.com/download/win">git</a></li><li>安装<a href="https://nodejs.org/en/download/">node.js</a></li></ul><p>在命令行中一次输入</p><ul><li><code>npm install -g hexo-cli</code></li></ul><blockquote><p>出现该警告<img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210802141411601.png" alt="image-20210802141411601"></p></blockquote><blockquote><p>原因： fsevent是mac osx系统的，在win或者Linux下使用了 所以会有警告，忽略就好了。</p></blockquote><ul><li><code>hexo init blog</code></li><li><code>cd blog</code></li><li><code>npm install</code></li><li><code>hexo server</code></li></ul><blockquote><p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210802141835027.png" alt="image-20210802141835027"></p></blockquote><blockquote><p>表示成功安装，可访问<code>http://localhost:4000</code></p></blockquote><h3 id="02-HEXO文件打包"><a href="#02-HEXO文件打包" class="headerlink" title="02. HEXO文件打包"></a>02. HEXO文件打包</h3><p>生成静态网站<code>hexo g</code></p><p>生成好的 public 文件夹可以直接当成静态网站进行部署</p><h3 id="03-HEXO主题设置"><a href="#03-HEXO主题设置" class="headerlink" title="03. HEXO主题设置"></a>03. HEXO主题设置</h3><p><code>https://hexo.io/themes/</code></p><p>点击主题名进入其github仓库，根据提示完成安装</p><blockquote><p>分5.0以前版本的安装和5.0以后版本的安装。</p></blockquote><p>这里使用的是<code>git clone https://github.com/autoload/hexo-theme-auto.git themes/auto</code>进行安装，安装完毕后，打开<code>_config.yml</code>文件。将<code>_config.yml</code>中的<code>theme</code>字段值改为<code>auto</code>。</p><h3 id="04-自定义博客结构"><a href="#04-自定义博客结构" class="headerlink" title="04. 自定义博客结构"></a>04. 自定义博客结构</h3><p>根据自身需要使用网页开发的基本技术将<code>theme</code>下的模板文件进行修改。</p><h3 id="05-写博客以及文章分类与标签"><a href="#05-写博客以及文章分类与标签" class="headerlink" title="05. 写博客以及文章分类与标签"></a>05. 写博客以及文章分类与标签</h3><p>参见<a href="https://hexo.io/docs/front-matter">hexo docs文件</a></p><p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210802204144823.png" alt="image-20210802204144823"></p><h3 id="06-让代码显示得更加美观"><a href="#06-让代码显示得更加美观" class="headerlink" title="06. 让代码显示得更加美观"></a>06. 让代码显示得更加美观</h3><p>引入<code>&lt;linkrel=&quot;stylesheet&quot; href=&quot;https://oindk07nf.qnssl.com/atom-one-dark.css&quot; media=&quot;screen&quot; type=&quot;text/css&quot;&gt;</code>后，按照<a href="https://hexo.io/docs/tag-plugins#Code-Block">hexo中tag-plugins的code-block</a>书写代码即可。</p><h3 id="07-本地写作时图床的最佳解决方案"><a href="#07-本地写作时图床的最佳解决方案" class="headerlink" title="07. 本地写作时图床的最佳解决方案"></a>07. 本地写作时图床的最佳解决方案</h3>]]></content>
     
@@ -33,8 +33,6 @@
       
     
     
-    
-    <category term="hexo" scheme="https://zlwnge.github.io/categories/hexo/"/>
     
     
   </entry>
