@@ -6,7 +6,7 @@
   <link href="https://zlwnge.github.io/atom.xml" rel="self"/>
   
   <link href="https://zlwnge.github.io/"/>
-  <updated>2021-08-03T11:20:35.695Z</updated>
+  <updated>2021-08-06T06:15:39.877Z</updated>
   <id>https://zlwnge.github.io/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用于高维特征选择的可变长度的粒子群算法</title>
+    <link href="https://zlwnge.github.io/2021/08/04/%E7%94%A8%E4%BA%8E%E9%AB%98%E7%BB%B4%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E7%9A%84%E9%95%BF%E5%BA%A6%E5%8F%AF%E5%8F%98%E7%9A%84%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/"/>
+    <id>https://zlwnge.github.io/2021/08/04/%E7%94%A8%E4%BA%8E%E9%AB%98%E7%BB%B4%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E7%9A%84%E9%95%BF%E5%BA%A6%E5%8F%AF%E5%8F%98%E7%9A%84%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/</id>
+    <published>2021-08-03T16:00:00.000Z</published>
+    <updated>2021-08-06T06:15:39.877Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Variable-Length-Particle-Swarm-Optimisation-for-Feature-Selection-on-High-Dimensional-Classification"><a href="#Variable-Length-Particle-Swarm-Optimisation-for-Feature-Selection-on-High-Dimensional-Classification" class="headerlink" title="Variable-Length Particle Swarm Optimisation for Feature Selection on High-Dimensional Classification"></a>Variable-Length Particle Swarm Optimisation for Feature Selection on High-Dimensional Classification</h3><p>本文基于高维特征选择问题提出了一种粒子长度可变的粒子群算法。</p><p>创新点：</p><ul><li><p>粒子长度可变，使得搜索空间更小</p></li><li><p>按相关性降序排列特征，提升其分类特征</p></li><li><p>提出长度改变机制，使算法跳出局部最优，进一步缩小搜索空间</p></li></ul><span id="more"></span><h4 id="1-引言"><a href="#1-引言" class="headerlink" title="1. 引言"></a>1. 引言</h4><p>​        主要特征选择方法有：<u>包装器法</u>、<u>过滤器法</u>。包装器法使用分类算法评估特征子集的优良性，而过滤器法基于训练数据的内在特征进行评估。因此包装器法分类性能通常比过滤器法更好，但计算时间更长。</p><p>​        <u>特征排序</u>或特征加权法，是将特征按照其与目标概念间的相关度进行排序，选择预定义数量的最优特征来形成特征子集。但是特征之间可能存在双向、三向或多向的复杂交互作用。当某个特征与其它特征组合时，单独弱相关的特征可能变得非常有用，反之亦然。另外，排名靠前的特征也可能是冗余的，这可能会降低分类算法的性能。所以，独立评估特征并不能很好处理<u>特征交互</u>问题。</p><p>​        与特征排序法相比，<u>特征子集选择法</u>可以一次性评估整个特征子集，可以更好处理特征交互。比较典型的特征子集选择方法有：顺序向前选择（SFS）和顺序向后选择（SBS）。但这些方法应用在高维数据中虽然有效，但计算量太大，即使使用贪婪搜索，也会容易陷入局部最优。而粒子群算法是表现较好的一种全局搜索算法。</p><p>​        所以本文提出一种改进的粒子群算法的特征选择方法——VLPSO。</p><hr><h4 id="2-VLPSO"><a href="#2-VLPSO" class="headerlink" title="2. VLPSO"></a>2. VLPSO</h4><p>​    1. 为了使不同粒子可以具有不同长度，本文提出了一种新的初始化方法，即<u><strong>种群划分</strong></u>（population division）。</p><p>​    2. 在应用粒子群算法之前，<u><strong>基于特征排序方法对特征降序排序</strong></u>。使较为重要的特征总是可以被任何粒子选择；另一方面，较长的粒子可以包含不太相关的特征，使得粒子群算法能够检测可能发生的特征交互，从而产生质量更高的特征子集。</p><pre><code>      3. &lt;u&gt;**采用CLPSO的更新机制并予以调整**&lt;/u&gt;，使变长粒子间互相传递信息，增加种群多样性。     - 调整CLPSO中的&lt;u&gt;**示例分配**&lt;/u&gt;（exemplar assignment）     - 用&lt;u&gt;**自适应学习概率**&lt;/u&gt;（adaptive learning probability）代替CLPSO中的样本选择概率</code></pre><ol start="4"><li>提出<u><strong>长度改变机制</strong></u>（length changing）以缓解早熟收敛。</li><li>结合<u><strong>局部搜索</strong></u>（local search）以加强VLPSO的局部寻优能力。</li><li>结合包装器法和过滤器法的优势，使用<u><strong>KNN和距离度量混合的特征评估方法</strong></u>。</li></ol><blockquote><p>问题：</p><ul><li>所提算法选择的特征子集是否比原始特征集小，以及与初始版本算法和其他改进版本算法相比子集是否达到相似或更好</li><li>所结合策略是否有助于提出的方法实现更好的分类精度</li><li>所提方法是否显著减少了算法在数据集上的运行时间</li><li>所提算法是否优于传统的特征选择方法</li><li>所提出的策略是否有效、高效地帮助初始版算法提高其在数据集上的性能</li></ul></blockquote><h5 id="2-1-编码"><a href="#2-1-编码" class="headerlink" title="2.1. 编码"></a>2.1. 编码</h5><p>​        如图，VLPSO中每个粒子由三个向量（位置、速度、示例），以及两个变量（学习概率、样本更新次数）表示。</p><p><img src="http://image.zlwnge.top/20210804161557.png" alt="image-20210804161557360"></p><h5 id="2-2-示例分配"><a href="#2-2-示例分配" class="headerlink" title="2.2. 示例分配"></a>2.2. 示例分配</h5><p>​        如图，在CLPSO中，任何粒子都可以作为粒子某一维度的示例。但是VLPSO粒子长度不同，所以其示例长度必须大于等于其本身长度。其中for循环之中的if-else语句用于判断，若随机数大于该粒子的学习概率，则令其本身作为示例；否则随机选择不相同的p1、p2样本，选择较好的作为示例。</p><p><img src="http://image.zlwnge.top/20210806081402.png" alt="image-20210806081402374"></p><h5 id="2-3-自适应学习概率"><a href="#2-3-自适应学习概率" class="headerlink" title="2.3. 自适应学习概率"></a>2.3. 自适应学习概率</h5><p>​        在CLPSO中，粒子学习概率如下式（3）所示，从中可以看出，粒子index越小，其示例越趋向于自身，这种方式显然是不科学的。应该按照粒子的适应度计算学习概率，粒子适应度越高其越应该获得更小的学习概率，而且适应度越坏，越应该向其它粒子学习，所以本文采用式（5）的自适应学习概率。</p><p><img src="http://image.zlwnge.top/20210806083023.png" alt="image-20210806083023753"></p><p><img src="http://image.zlwnge.top/20210806083042.png" alt="image-20210806083042255"></p><p>​        其中<code>S</code>表示种群数量，<code>rank(i)</code>是粒子<code>i</code>的排名，最好的粒子排名第一。</p><h5 id="2-4-种群划分"><a href="#2-4-种群划分" class="headerlink" title="2.4. 种群划分"></a>2.4. 种群划分</h5><p>​        本文提出的变长概念并不是将每个粒子都设置成不同长度，而是将整个种群划分为预定义数量的分区。通过这种方式将搜索空间划分为更小的子空间，从而提高算法性能。</p><p>​        每个分区的粒子数是基于种群大小和分区数计算的，同一分区的粒子具有相同的长度。而每一分区中的粒子长度是根据式（7）计算的，其中最大长度是问题维度。在同一分区中，具有相同长度的粒子可以表示具有不同的特征子集大小的特征子集，如，长度为8的两个粒子，10100001和10001111，分别表示从给定数据集的前8个特征中选择了哪些特征。它们分别对应特征子集大小为3和5的两个特征子集{F1, F3, F8}和{F1, F5, F6, F7, F8}。</p><p><img src="http://image.zlwnge.top/20210806085315.png" alt="image-20210806085315067"></p><p><img src="http://image.zlwnge.top/20210806085332.png" alt="image-20210806085331984"></p><p><img src="http://image.zlwnge.top/20210806085358.png" alt="image-20210806085358838"></p><h5 id="2-5-特征排名"><a href="#2-5-特征排名" class="headerlink" title="2.5. 特征排名"></a>2.5. 特征排名</h5><p>​        本文采用对称不确定性（symmetric uncertainty, SU）将特征按相关性降序排列。通过下式衡量特征F与类标签C间的相关性，相关性越高越好。</p><p><img src="http://image.zlwnge.top/20210806085829.png" alt="image-20210806085829094"></p><p>​        其中H(F)是F的熵，H(F|C)是给定C的F的条件熵，SU(F, C)的值在(0, 1)之间，1代表最相关的特征。</p><h5 id="2-6-长度改变"><a href="#2-6-长度改变" class="headerlink" title="2.6. 长度改变"></a>2.6. 长度改变</h5><p>​        为了帮助算法跳出局部最优，本文提出一种长度改变机制，将粒子引导到更好的区域，特别是当<code>gbest</code>在预定义迭代次数内没有变化时，计算每个分区中所有粒子的平均适应度，并调整粒子的长度以将算法搜索扩展到最佳分区。</p><p>​        在这个过程中，保持最佳分区中的粒子不变，将其它分区中的粒子调整到最佳分区。该过程在将粒子本身信息保留的同时，基于最佳分区长度和当前分区长度动态计算被切割或附加的特征。</p><p><img src="http://image.zlwnge.top/20210806093953.png" alt="image-20210806093953406"></p><p>​        如上图，假设第三个分区为最佳分区，它保持不变，3000成为群体的新最大长度。其余分区粒子长度分别更改为600、1200、1800和2400，其余的400、800、2200和2600维将被切割。如Algorithm 2所示，如果分区中粒子的当前长度比新长度短，则附加更多维度并随机初始化（第12-16行）；否则超出的部分将被移除（第18-21行）。</p><p><img src="http://image.zlwnge.top/20210806094213.png" alt="image-20210806094213694"></p><blockquote><p>​        此机制的出发条件为<code>gbest</code>在迭代n次后仍未改善。所以有必要对超参数n和分区数进行灵敏度分析。</p></blockquote><h5 id="2-7-适应度函数"><a href="#2-7-适应度函数" class="headerlink" title="2.7. 适应度函数"></a>2.7. 适应度函数</h5><p>​        本文通过权重γ将K近邻的精度和距离度量结合形成适应度函数。分类精度可以特征子集的性能，距离度量可以近似表示这些特征能在多大的距离范围内区分实例的类别。</p><p><img src="http://image.zlwnge.top/20210806102231.png" alt="image-20210806102231331"></p><p>​        为了处理高维数据集中的不平衡数据，我们对适应度函数的第一个分量使用了基于式（11）计算的平衡精度。对训练数据进行留一交叉验证，评价KNN的性能。</p><p><img src="http://image.zlwnge.top/20210806102435.png" alt="image-20210806102435880"></p><p>​        其中c是问题的总类别，TPRi是类别i的分类正确率。</p><p>​        基于式（12）计算距离度量，旨在最大化不同类实例间的距离（Db），最小化同一类实例间的距离（Dw）。</p><p><img src="http://image.zlwnge.top/20210806102728.png" alt="image-20210806102728344"></p><p>​        其中M是训练集中的实例数，两实例间的距离Dis(I, J)采用曼哈顿度量，为了更好地应用这个距离度量，训练数据被缩放到[0， 1]之间。</p><h5 id="2-8-VLPSO算法"><a href="#2-8-VLPSO算法" class="headerlink" title="2.8. VLPSO算法"></a>2.8. VLPSO算法</h5><p><img src="http://image.zlwnge.top/20210806132453.png" alt="image-20210806132452963"></p><p>​        算法有三个输入参数，分区数、gbest不被改进以更新粒子样本的最大迭代次数α、gbest不被改变以改变粒子长度的最大迭代次数β。</p><p>​        算法先对特征进行重新排列，然后初始化所有分区、计算学习概率并为每个粒子分配示例。第二个循环是进化过程，在这一过程中如果gbest经过β次迭代仍未改善则触发长度改变机制。</p><p>​        算法的时间复杂度主要由粒子群算法更新时间和适应度评估时间组成，而后者占更大比例。但即使是在最坏的情况下（所有粒子选择所有特征），由于较短粒子的长度，所提出的方法仍然只花费一半的时间（与其他算法相比）。</p><h5 id="2-9-VLPSO-LS"><a href="#2-9-VLPSO-LS" class="headerlink" title="2.9. VLPSO-LS"></a>2.9. VLPSO-LS</h5><p>​        本文将局部搜索与VLPSO结合，提出VLPSO-LS。</p><p>​        该局部搜索通过基于式（8）对特征相关性的SU度量，随机移除一些冗余特征并添加更多相关特征。具体表现为：选择当前pbest长度的25%个特征，扫描该部分特征，删除其中冗余的特征，并添加相关特征。</p><blockquote><p>如果该特征与其他已选中的特征间的相关性大于该特征与类标签之间的相关性，则该特征是冗余的；如果该特征与类标签间的相关性大于该特征与随机选取部分中所有已选中的特征间的平均相关性，则该特征是相关的。</p></blockquote><p>​        由于每进行一次局部搜索都要评估一次，这大大增加了计算时间。为了加快算法的速度，这里采用快速适应度评估策略。即从当前距离中分别添加或减去从当前pbest中添加或移除的特征的值差来计算实例间的新距离。因为局部搜索只是对pbest的一小部分进行了操作，所以该策略节省了大量评估时间。</p><blockquote><p>这里也可以预定义局部搜索的频率，在有效性和效率之间折衷。</p></blockquote>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;Variable-Length-Particle-Swarm-Optimisation-for-Feature-Selection-on-High-Dimensional-Classification&quot;&gt;&lt;a href=&quot;#Variable-Length-Particle-Swarm-Optimisation-for-Feature-Selection-on-High-Dimensional-Classification&quot; class=&quot;headerlink&quot; title=&quot;Variable-Length Particle Swarm Optimisation for Feature Selection on High-Dimensional Classification&quot;&gt;&lt;/a&gt;Variable-Length Particle Swarm Optimisation for Feature Selection on High-Dimensional Classification&lt;/h3&gt;&lt;p&gt;本文基于高维特征选择问题提出了一种粒子长度可变的粒子群算法。&lt;/p&gt;
+&lt;p&gt;创新点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;粒子长度可变，使得搜索空间更小&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;按相关性降序排列特征，提升其分类特征&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;提出长度改变机制，使算法跳出局部最优，进一步缩小搜索空间&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="论文研读" scheme="https://zlwnge.github.io/categories/%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB/"/>
+    
+    
+    <category term="Feature Selection" scheme="https://zlwnge.github.io/tags/Feature-Selection/"/>
+    
+    <category term="PSO" scheme="https://zlwnge.github.io/tags/PSO/"/>
+    
+    <category term="可变长度" scheme="https://zlwnge.github.io/tags/%E5%8F%AF%E5%8F%98%E9%95%BF%E5%BA%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo+github个人博客搭建</title>
