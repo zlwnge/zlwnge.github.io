@@ -91,14 +91,19 @@
 <hr>
 <h4 id="2-VLPSO"><a href="#2-VLPSO" class="headerlink" title="2. VLPSO"></a>2. VLPSO</h4><p>​    1. 为了使不同粒子可以具有不同长度，本文提出了一种新的初始化方法，即<u><strong>种群划分</strong></u>（population division）。</p>
 <p>​    2. 在应用粒子群算法之前，<u><strong>基于特征排序方法对特征降序排序</strong></u>。使较为重要的特征总是可以被任何粒子选择；另一方面，较长的粒子可以包含不太相关的特征，使得粒子群算法能够检测可能发生的特征交互，从而产生质量更高的特征子集。</p>
-<pre><code>      3. &lt;u&gt;**采用CLPSO的更新机制并予以调整**&lt;/u&gt;，使变长粒子间互相传递信息，增加种群多样性。
-     - 调整CLPSO中的&lt;u&gt;**示例分配**&lt;/u&gt;（exemplar assignment）
-     - 用&lt;u&gt;**自适应学习概率**&lt;/u&gt;（adaptive learning probability）代替CLPSO中的样本选择概率
-</code></pre>
-<ol start="4">
-<li>提出<u><strong>长度改变机制</strong></u>（length changing）以缓解早熟收敛。</li>
-<li>结合<u><strong>局部搜索</strong></u>（local search）以加强VLPSO的局部寻优能力。</li>
-<li>结合包装器法和过滤器法的优势，使用<u><strong>KNN和距离度量混合的特征评估方法</strong></u>。</li>
+<ol start="3">
+<li><p><u><strong>采用CLPSO的更新机制并予以调整</strong></u>，使变长粒子间互相传递信息，增加种群多样性。</p>
+<ul>
+<li>调整CLPSO中的<u><strong>示例分配</strong></u>（exemplar assignment）</li>
+<li>用<u><strong>自适应学习概率</strong></u>（adaptive learning probability）代替CLPSO中的样本选择概率</li>
+</ul>
+</li>
+<li><p>提出<u><strong>长度改变机制</strong></u>（length changing）以缓解早熟收敛。</p>
+</li>
+<li><p>结合<u><strong>局部搜索</strong></u>（local search）以加强VLPSO的局部寻优能力。</p>
+</li>
+<li><p>结合包装器法和过滤器法的优势，使用<u><strong>KNN和距离度量混合的特征评估方法</strong></u>。</p>
+</li>
 </ol>
 <blockquote>
 <p>问题：</p>
@@ -111,7 +116,7 @@
 </ul>
 </blockquote>
 <h5 id="2-1-编码"><a href="#2-1-编码" class="headerlink" title="2.1. 编码"></a>2.1. 编码</h5><p>​        如图，VLPSO中每个粒子由三个向量（位置、速度、示例），以及两个变量（学习概率、样本更新次数）表示。</p>
-<p><img src="http://image.zlwnge.top/20210804161557.png" alt="image-20210804161557360"></p>
+<p><img src="http://image.zlwnge.top/20210804161557.png"></p>
 <h5 id="2-2-示例分配"><a href="#2-2-示例分配" class="headerlink" title="2.2. 示例分配"></a>2.2. 示例分配</h5><p>​        如图，在CLPSO中，任何粒子都可以作为粒子某一维度的示例。但是VLPSO粒子长度不同，所以其示例长度必须大于等于其本身长度。其中for循环之中的if-else语句用于判断，若随机数大于该粒子的学习概率，则令其本身作为示例；否则随机选择不相同的p1、p2样本，选择较好的作为示例。</p>
 <p><img src="http://image.zlwnge.top/20210806081402.png" alt="image-20210806081402374"></p>
 <h5 id="2-3-自适应学习概率"><a href="#2-3-自适应学习概率" class="headerlink" title="2.3. 自适应学习概率"></a>2.3. 自适应学习概率</h5><p>​        在CLPSO中，粒子学习概率如下式（3）所示，从中可以看出，粒子index越小，其示例越趋向于自身，这种方式显然是不科学的。应该按照粒子的适应度计算学习概率，粒子适应度越高其越应该获得更小的学习概率，而且适应度越坏，越应该向其它粒子学习，所以本文采用式（5）的自适应学习概率。</p>
@@ -159,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zlwnge.top/2021/08/04/%E7%94%A8%E4%BA%8E%E9%AB%98%E7%BB%B4%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E7%9A%84%E9%95%BF%E5%BA%A6%E5%8F%AF%E5%8F%98%E7%9A%84%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/" data-id="cks2o4jl100028gjl4yfs8004" data-title="用于高维特征选择的可变长度的粒子群算法" class="article-share-link">Compartir</a>
+      <a data-url="https://zlwnge.top/2021/08/04/%E7%94%A8%E4%BA%8E%E9%AB%98%E7%BB%B4%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E7%9A%84%E9%95%BF%E5%BA%A6%E5%8F%AF%E5%8F%98%E7%9A%84%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/" data-id="cks2o7sks000294jlcklc2qli" data-title="用于高维特征选择的可变长度的粒子群算法" class="article-share-link">Compartir</a>
       
       
       
