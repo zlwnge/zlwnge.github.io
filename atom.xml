@@ -6,7 +6,7 @@
   <link href="https://zlwnge.top/atom.xml" rel="self"/>
   
   <link href="https://zlwnge.top/"/>
-  <updated>2021-09-01T06:49:17.230Z</updated>
+  <updated>2021-09-02T00:38:52.911Z</updated>
   <id>https://zlwnge.top/</id>
   
   <author>
@@ -21,15 +21,17 @@
     <link href="https://zlwnge.top/2021/09/01/2021-09-01-%E6%94%B9%E8%BF%9B%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%81%B0%E7%8B%BC%E7%AE%97%E6%B3%95%E5%8F%8A%E5%85%B6%E5%9C%A8%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/"/>
     <id>https://zlwnge.top/2021/09/01/2021-09-01-%E6%94%B9%E8%BF%9B%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%81%B0%E7%8B%BC%E7%AE%97%E6%B3%95%E5%8F%8A%E5%85%B6%E5%9C%A8%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/</id>
     <published>2021-08-31T16:00:00.000Z</published>
-    <updated>2021-09-01T06:49:17.230Z</updated>
+    <updated>2021-09-02T00:38:52.911Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="Improved-Binary-Grey-Wolf-Optimizer-and-Its-application-for-feature-selection"><a href="#Improved-Binary-Grey-Wolf-Optimizer-and-Its-application-for-feature-selection" class="headerlink" title="Improved Binary Grey Wolf Optimizer and Its application for feature selection"></a>Improved Binary Grey Wolf Optimizer and Its application for feature selection</h3><p>本文基于灰狼算法提出了一个改进版本的二进制灰狼算法并将其应用于特征选择问题上</p><p>创新点：</p><ul><li>提出新的a参数更新公式以平衡全局搜索及局部搜索的能力</li><li>提出五个传递函数，提高了解的质量</li></ul><!--Read more--><h4 id="二进制灰狼算法的转换过程"><a href="#二进制灰狼算法的转换过程" class="headerlink" title="二进制灰狼算法的转换过程"></a>二进制灰狼算法的转换过程</h4><p><img src="http://image.zlwnge.top/20210901144717.png" alt="image-20210901144717853"></p><p><img src="http://image.zlwnge.top/20210901144734.png" alt="image-20210901144734799"></p><p><img src="http://image.zlwnge.top/20210901144745.png" alt="image-20210901144745859"></p><p><img src="http://image.zlwnge.top/20210901144801.png" alt="image-20210901144801705"></p><p><img src="http://image.zlwnge.top/20210901144844.png" alt="image-20210901144844584"></p><hr><h4 id="新的参数更新方程"><a href="#新的参数更新方程" class="headerlink" title="新的参数更新方程"></a>新的参数更新方程</h4><p>​        二进制灰狼算法，在算法的早期阶段，位置需要能够在0、1之间快速切换以搜索更多空间。而在后期，位置切换速度较慢，以提高搜索最优解的能力。</p><p><img src="http://image.zlwnge.top/20210901143317.png" alt="image-20210901143309050"></p><p>提出以上公式，a从0线性增加到2，在算法早期，a值较小，意味着BGWO的位置切换概率很小；随着算法不断迭代，a越来越大，BGWO切换位置的概率很大，有效的平衡了搜索与开发。</p><hr><h4 id="新的转换函数"><a href="#新的转换函数" class="headerlink" title="新的转换函数"></a>新的转换函数</h4><p>​        初始的转换函数，在函数值较大时，V1(x)、V2(x)、V3(x)、V4(x)的最大值分别是1.0000、0.9993、0.9701、0.8955。转换函数的目的是在函数值较大时有很大概率变为1，然而这些转换函数，即使x达到最大值，V2(x)、V3(x)、V4(x)也有0.07%、2.99%、10.45%的概率没有达到1。所以需要将其进行拉伸，以确保传递函数的值覆盖[0, 1]。</p><p><img src="http://image.zlwnge.top/20210901144053.png" alt="image-20210901144053769"></p><p>​        改进后的转换函数如下表。</p><p><img src="http://image.zlwnge.top/20210901144452.png" alt="image-20210901144452098"></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="Improved-Binary-Grey-Wolf-Optimizer-and-Its-application-for-feature-selection"><a href="#Improved-Binary-Grey-Wolf-Optimizer-and-Its-application-for-feature-selection" class="headerlink" title="Improved Binary Grey Wolf Optimizer and Its application for feature selection"></a>Improved Binary Grey Wolf Optimizer and Its application for feature selection</h3><p>本文基于灰狼算法提出了一个改进版本的二进制灰狼算法并将其应用于特征选择问题上</p><p>创新点：</p><ul><li>提出新的a参数更新公式以平衡全局搜索及局部搜索的能力</li><li>提出五个传递函数，提高了解的质量</li></ul><span id="more"></span><h4 id="二进制灰狼算法的转换过程"><a href="#二进制灰狼算法的转换过程" class="headerlink" title="二进制灰狼算法的转换过程"></a>二进制灰狼算法的转换过程</h4><p><img src="http://image.zlwnge.top/20210901144717.png" alt="image-20210901144717853"></p><p><img src="http://image.zlwnge.top/20210901144734.png" alt="image-20210901144734799"></p><p><img src="http://image.zlwnge.top/20210901144745.png" alt="image-20210901144745859"></p><p><img src="http://image.zlwnge.top/20210901144801.png" alt="image-20210901144801705"></p><p><img src="http://image.zlwnge.top/20210901144844.png" alt="image-20210901144844584"></p><hr><h4 id="新的参数更新方程"><a href="#新的参数更新方程" class="headerlink" title="新的参数更新方程"></a>新的参数更新方程</h4><p>​        二进制灰狼算法，在算法的早期阶段，位置需要能够在0、1之间快速切换以搜索更多空间。而在后期，位置切换速度较慢，以提高搜索最优解的能力。</p><p><img src="http://image.zlwnge.top/20210901143317.png" alt="image-20210901143309050"></p><p>提出以上公式，a从0线性增加到2，在算法早期，a值较小，意味着BGWO的位置切换概率很小；随着算法不断迭代，a越来越大，BGWO切换位置的概率很大，有效的平衡了搜索与开发。</p><hr><h4 id="新的转换函数"><a href="#新的转换函数" class="headerlink" title="新的转换函数"></a>新的转换函数</h4><p>​        初始的转换函数，在函数值较大时，V1(x)、V2(x)、V3(x)、V4(x)的最大值分别是1.0000、0.9993、0.9701、0.8955。转换函数的目的是在函数值较大时有很大概率变为1，然而这些转换函数，即使x达到最大值，V2(x)、V3(x)、V4(x)也有0.07%、2.99%、10.45%的概率没有达到1。所以需要将其进行拉伸，以确保传递函数的值覆盖[0, 1]。</p><p><img src="http://image.zlwnge.top/20210901144053.png" alt="image-20210901144053769"></p><p>​        改进后的转换函数如下表。</p><p><img src="http://image.zlwnge.top/20210901144452.png" alt="image-20210901144452098"></p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Improved-Binary-Grey-Wolf-Optimizer-and-Its-application-for-feature-selection&quot;&gt;&lt;a href=&quot;#Improved-Binary-Grey-Wolf-Optimizer-and-Its</summary>
-      
+    <summary type="html">&lt;h3 id=&quot;Improved-Binary-Grey-Wolf-Optimizer-and-Its-application-for-feature-selection&quot;&gt;&lt;a href=&quot;#Improved-Binary-Grey-Wolf-Optimizer-and-Its-application-for-feature-selection&quot; class=&quot;headerlink&quot; title=&quot;Improved Binary Grey Wolf Optimizer and Its application for feature selection&quot;&gt;&lt;/a&gt;Improved Binary Grey Wolf Optimizer and Its application for feature selection&lt;/h3&gt;&lt;p&gt;本文基于灰狼算法提出了一个改进版本的二进制灰狼算法并将其应用于特征选择问题上&lt;/p&gt;
+&lt;p&gt;创新点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提出新的a参数更新公式以平衡全局搜索及局部搜索的能力&lt;/li&gt;
+&lt;li&gt;提出五个传递函数，提高了解的质量&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     

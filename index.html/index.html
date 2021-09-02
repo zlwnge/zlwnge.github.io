@@ -80,27 +80,15 @@
 <li>提出新的a参数更新公式以平衡全局搜索及局部搜索的能力</li>
 <li>提出五个传递函数，提高了解的质量</li>
 </ul>
-<!--Read more-->
-
-<h4 id="二进制灰狼算法的转换过程"><a href="#二进制灰狼算法的转换过程" class="headerlink" title="二进制灰狼算法的转换过程"></a>二进制灰狼算法的转换过程</h4><p><img src="http://image.zlwnge.top/20210901144717.png" alt="image-20210901144717853"></p>
-<p><img src="http://image.zlwnge.top/20210901144734.png" alt="image-20210901144734799"></p>
-<p><img src="http://image.zlwnge.top/20210901144745.png" alt="image-20210901144745859"></p>
-<p><img src="http://image.zlwnge.top/20210901144801.png" alt="image-20210901144801705"></p>
-<p><img src="http://image.zlwnge.top/20210901144844.png" alt="image-20210901144844584"></p>
-<hr>
-<h4 id="新的参数更新方程"><a href="#新的参数更新方程" class="headerlink" title="新的参数更新方程"></a>新的参数更新方程</h4><p>​        二进制灰狼算法，在算法的早期阶段，位置需要能够在0、1之间快速切换以搜索更多空间。而在后期，位置切换速度较慢，以提高搜索最优解的能力。</p>
-<p><img src="http://image.zlwnge.top/20210901143317.png" alt="image-20210901143309050"></p>
-<p>提出以上公式，a从0线性增加到2，在算法早期，a值较小，意味着BGWO的位置切换概率很小；随着算法不断迭代，a越来越大，BGWO切换位置的概率很大，有效的平衡了搜索与开发。</p>
-<hr>
-<h4 id="新的转换函数"><a href="#新的转换函数" class="headerlink" title="新的转换函数"></a>新的转换函数</h4><p>​        初始的转换函数，在函数值较大时，V1(x)、V2(x)、V3(x)、V4(x)的最大值分别是1.0000、0.9993、0.9701、0.8955。转换函数的目的是在函数值较大时有很大概率变为1，然而这些转换函数，即使x达到最大值，V2(x)、V3(x)、V4(x)也有0.07%、2.99%、10.45%的概率没有达到1。所以需要将其进行拉伸，以确保传递函数的值覆盖[0, 1]。</p>
-<p><img src="http://image.zlwnge.top/20210901144053.png" alt="image-20210901144053769"></p>
-<p>​        改进后的转换函数如下表。</p>
-<p><img src="http://image.zlwnge.top/20210901144452.png" alt="image-20210901144452098"></p>
-
+        
+          <p class="article-more-link">
+            <a href="/2021/09/01/2021-09-01-%E6%94%B9%E8%BF%9B%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%81%B0%E7%8B%BC%E7%AE%97%E6%B3%95%E5%8F%8A%E5%85%B6%E5%9C%A8%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zlwnge.top/2021/09/01/2021-09-01-%E6%94%B9%E8%BF%9B%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%81%B0%E7%8B%BC%E7%AE%97%E6%B3%95%E5%8F%8A%E5%85%B6%E5%9C%A8%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/" data-id="ckt1ifgmb00045ojldcwo9dxs" data-title="改进的二进制灰狼算法及其在特征选择问题上的应用" class="article-share-link">Megosztás</a>
+      <a data-url="https://zlwnge.top/2021/09/01/2021-09-01-%E6%94%B9%E8%BF%9B%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%81%B0%E7%8B%BC%E7%AE%97%E6%B3%95%E5%8F%8A%E5%85%B6%E5%9C%A8%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/" data-id="ckt27bp4n0001psjl5dsxfsg8" data-title="改进的二进制灰狼算法及其在特征选择问题上的应用" class="article-share-link">Partager</a>
       
       
       
@@ -162,7 +150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zlwnge.top/2021/08/27/2021-08-27-%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E7%9A%84%E5%AE%9E%E4%BE%8B%E6%8A%95%E7%A5%A8%E6%B3%95/" data-id="ckt1ifgm100005ojldo3w3kab" data-title="特征选择的实例投票法" class="article-share-link">Megosztás</a>
+      <a data-url="https://zlwnge.top/2021/08/27/2021-08-27-%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E7%9A%84%E5%AE%9E%E4%BE%8B%E6%8A%95%E7%A5%A8%E6%B3%95/" data-id="ckt27bp2t0000psjldfmj0y9z" data-title="特征选择的实例投票法" class="article-share-link">Partager</a>
       
       
       
@@ -222,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zlwnge.top/2021/08/11/%E4%B8%8D%E5%B9%B3%E8%A1%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" data-id="ckt1ifgmk000j5ojlguni3njs" data-title="针对类不平衡数据的处理方法汇总" class="article-share-link">Megosztás</a>
+      <a data-url="https://zlwnge.top/2021/08/11/%E4%B8%8D%E5%B9%B3%E8%A1%A1%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" data-id="ckt27bp4z0006psjlbf243ko3" data-title="针对类不平衡数据的处理方法汇总" class="article-share-link">Partager</a>
       
       
       
@@ -279,7 +267,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zlwnge.top/2021/08/08/%E5%9F%BA%E4%BA%8E%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95%E7%9A%84%E9%AB%98%E7%BB%B4%E6%B7%B7%E5%90%88%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E7%AE%97%E6%B3%95/" data-id="ckt1ifgmj000i5ojl3ber864b" data-title="基于粒子群算法的高维混合特征选择算法" class="article-share-link">Megosztás</a>
+      <a data-url="https://zlwnge.top/2021/08/08/%E5%9F%BA%E4%BA%8E%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95%E7%9A%84%E9%AB%98%E7%BB%B4%E6%B7%B7%E5%90%88%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E7%AE%97%E6%B3%95/" data-id="ckt27bp5c0009psjleso176sb" data-title="基于粒子群算法的高维混合特征选择算法" class="article-share-link">Partager</a>
       
       
       
@@ -337,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zlwnge.top/2021/08/04/%E7%94%A8%E4%BA%8E%E9%AB%98%E7%BB%B4%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E7%9A%84%E9%95%BF%E5%BA%A6%E5%8F%AF%E5%8F%98%E7%9A%84%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/" data-id="ckt1ifgml000l5ojlg6u5386v" data-title="用于高维特征选择的可变长度的粒子群算法" class="article-share-link">Megosztás</a>
+      <a data-url="https://zlwnge.top/2021/08/04/%E7%94%A8%E4%BA%8E%E9%AB%98%E7%BB%B4%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E7%9A%84%E9%95%BF%E5%BA%A6%E5%8F%AF%E5%8F%98%E7%9A%84%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95/" data-id="ckt27bp5e000apsjl1x64gceb" data-title="用于高维特征选择的可变长度的粒子群算法" class="article-share-link">Partager</a>
       
       
       
@@ -429,7 +417,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zlwnge.top/2021/08/02/HEXO/" data-id="ckt1ifgm700015ojl3gqc6rv5" data-title="Hexo+github个人博客搭建" class="article-share-link">Megosztás</a>
+      <a data-url="https://zlwnge.top/2021/08/02/HEXO/" data-id="ckt27bp4u0004psjl3t5081ue" data-title="Hexo+github个人博客搭建" class="article-share-link">Partager</a>
       
       
       
@@ -480,7 +468,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zlwnge.top/2021/08/02/hello-world/" data-id="ckt1ifgmc00055ojl5iwdhygp" data-title="Hello World" class="article-share-link">Megosztás</a>
+      <a data-url="https://zlwnge.top/2021/08/02/hello-world/" data-id="ckt27bp4w0005psjl02o28u6v" data-title="Hello World" class="article-share-link">Partager</a>
       
       
       
@@ -498,7 +486,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Címkék</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Feature-Selection/" rel="tag">Feature Selection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Feature-selection/" rel="tag">Feature selection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GWO/" rel="tag">GWO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PSO/" rel="tag">PSO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/feature-selection/" rel="tag">feature selection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/filter-based-method/" rel="tag">filter-based method</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/instance-voting/" rel="tag">instance voting</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unbalance-data/" rel="tag">unbalance data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%AF%E5%8F%98%E9%95%BF%E5%BA%A6/" rel="tag">可变长度</a></li></ul>
     </div>
@@ -508,7 +496,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Legfrissebb bejegyzések</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -539,7 +527,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Kategóriák</h3>
+    <h3 class="widget-title">Catégories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB/">论文研读</a></li></ul>
     </div>
@@ -549,7 +537,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archív</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li></ul>
     </div>
